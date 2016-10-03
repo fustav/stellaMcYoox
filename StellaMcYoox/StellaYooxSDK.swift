@@ -127,6 +127,59 @@ class StellaYooxSDK {
         task.resume()
     }
     
+    static func verifyUrl (urlString: String?) -> Bool {
+        //Check for nil
+        if let urlString = urlString {
+            // create NSURL instance
+            if let url = NSURL(string: urlString) {
+                // check if your application can open the NSURL instance
+                return UIApplication.sharedApplication().canOpenURL(url)
+            }
+        }
+        return false
+    }
+    
+    static func getMultipleImages(id1: String, id2: String, id3: String, id4: String, id5: String, defaultCode: String) {
+        let imgURLString = "http://ypic.yoox.biz/ypic/stellamccartney/-resize/750/\(id1)/\(defaultCode).jpg"
+        //print("url foto è:\(url)")
+        print("percorso completo foto1: \(imgURLString)")
+        
+        let imgURL = NSURL(string: imgURLString)
+        let imageData = NSData(contentsOfURL: imgURL!)
+        let image = UIImage(data: imageData!)
+        StellaYooxSDK.productImage.featuredImageView = image
+        StellaYooxSDK.arrayOfImages.append(StellaYooxSDK.productImage)
+        
+        let img2URLString = "http://ypic.yoox.biz/ypic/stellamccartney/-resize/750/\(id2)/\(defaultCode).jpg"
+        print("percorso completo foto2: \(img2URLString)")
+        if verifyUrl(img2URLString) {
+        
+        let img2URL = NSURL(string: img2URLString)
+        let image2Data = NSData(contentsOfURL: img2URL!)
+        let image2 = UIImage(data: image2Data!)
+
+            let productImage2: Image = Image()
+            productImage2.featuredImageView = image2
+            StellaYooxSDK.arrayOfImages.append(productImage2)
+            
+           /* let img3URLString = "http://ypic.yoox.biz/ypic/stellamccartney/-resize/750/\(id3)/\(defaultCode).jpg"
+            //print("url foto è:\(url)")
+            print("percorso completo foto3: \(img3URLString)")
+            if verifyUrl(img3URLString) == true     {
+            
+                let img3URL = NSURL(string: img3URLString)
+                let image3Data = NSData(contentsOfURL: img3URL!)
+                let image3 = UIImage(data: image3Data!)
+                let productImage3: Image = Image()
+                productImage3.featuredImageView = image3
+                StellaYooxSDK.arrayOfImages.append(productImage3)
+            }*/
+        }
+        else {
+            print("Non ci sono più immagini da scaricare, totale immagini è: \(StellaYooxSDK.arrayOfImages.count)")
+        }
+    }
+    
 }
 
 extension UIViewController {

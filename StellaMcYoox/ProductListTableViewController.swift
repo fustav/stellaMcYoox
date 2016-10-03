@@ -62,8 +62,9 @@ class ProductListTableViewController: UITableViewController {
         
         self.tableView.reloadData()
         SVProgressHUD.dismiss()
-
-
+        
+        _ = NSTimer.scheduledTimerWithTimeInterval(2.5, target: self, selector: #selector(ProductListTableViewController.do_table_refresh), userInfo: nil, repeats: true)
+    
     }
 
     override func didReceiveMemoryWarning() {
@@ -147,9 +148,19 @@ class ProductListTableViewController: UITableViewController {
         // Pass the selected object to the new view controller.
         
         if segue.identifier == "detailVC" {
-            SVProgressHUD.show()
+            
             let destinationViewController = segue.destinationViewController as! NewDetailProductViewController
             let indexPath = self.tableView.indexPathForSelectedRow!
+            
+            //dispatch_async(dispatch_get_main_queue(), {
+
+                SVProgressHUD.show()
+                //Getting multiple images (First Beta Version - 2 Images)
+            
+                StellaYooxSDK.arrayOfImages = []
+            
+                StellaYooxSDK.getMultipleImages("f", id2: "r", id3: "d", id4: "e", id5: "a", defaultCode: StellaYooxSDK.arrayOfProducts[indexPath.row].DefaultCode10)
+            //})
             
             let destinationMicroCategory = StellaYooxSDK.arrayOfProducts[indexPath.row].MicroCategory
             destinationViewController.microCategory = destinationMicroCategory!
@@ -170,30 +181,8 @@ class ProductListTableViewController: UITableViewController {
             }
             
             
-            //Getting multiple images (First Beta Version - 2 Images)
-            
-            StellaYooxSDK.arrayOfImages = []
-            
-            let imgURLString = "http://ypic.yoox.biz/ypic/stellamccartney/-resize/750/f/\(StellaYooxSDK.arrayOfProducts[indexPath.row].DefaultCode10).jpg"
-            //print("url foto è:\(url)")
-            print("percorso completo di NEW: \(imgURLString)")
-            
-            let imgURL = NSURL(string: imgURLString)
-            let imageData = NSData(contentsOfURL: imgURL!)
-            let image = UIImage(data: imageData!)
-            StellaYooxSDK.productImage.featuredImageView = image
-            StellaYooxSDK.arrayOfImages.append(StellaYooxSDK.productImage)
-            
-            let img2URLString = "http://ypic.yoox.biz/ypic/stellamccartney/-resize/750/r/\(StellaYooxSDK.arrayOfProducts[indexPath.row].DefaultCode10).jpg"
-            //print("url foto è:\(url)")
-            print("percorso completo di NEW: \(img2URLString)")
-            
-            let img2URL = NSURL(string: img2URLString)
-            let image2Data = NSData(contentsOfURL: img2URL!)
-            let image2 = UIImage(data: image2Data!)
-            let productImage2: Image = Image()
-            productImage2.featuredImageView = image2
-            StellaYooxSDK.arrayOfImages.append(productImage2)
+
+
         }
 
     }
