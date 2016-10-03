@@ -1,0 +1,505 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		AE33B6851DA25EB4000E4E6A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE33B6841DA25EB4000E4E6A /* AppDelegate.swift */; };
+		AE33B6871DA25EB4000E4E6A /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE33B6861DA25EB4000E4E6A /* ViewController.swift */; };
+		AE33B68A1DA25EB4000E4E6A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AE33B6881DA25EB4000E4E6A /* Main.storyboard */; };
+		AE33B68C1DA25EB4000E4E6A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AE33B68B1DA25EB4000E4E6A /* Assets.xcassets */; };
+		AE33B68F1DA25EB4000E4E6A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AE33B68D1DA25EB4000E4E6A /* LaunchScreen.storyboard */; };
+		AE33B69A1DA25EB4000E4E6A /* StellaMcYooxTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE33B6991DA25EB4000E4E6A /* StellaMcYooxTests.swift */; };
+		AE33B6A51DA25EB4000E4E6A /* StellaMcYooxUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE33B6A41DA25EB4000E4E6A /* StellaMcYooxUITests.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		AE33B6961DA25EB4000E4E6A /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = AE33B6791DA25EB4000E4E6A /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = AE33B6801DA25EB4000E4E6A;
+			remoteInfo = StellaMcYoox;
+		};
+		AE33B6A11DA25EB4000E4E6A /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = AE33B6791DA25EB4000E4E6A /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = AE33B6801DA25EB4000E4E6A;
+			remoteInfo = StellaMcYoox;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		AE33B6811DA25EB4000E4E6A /* StellaMcYoox.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = StellaMcYoox.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		AE33B6841DA25EB4000E4E6A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		AE33B6861DA25EB4000E4E6A /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		AE33B6891DA25EB4000E4E6A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		AE33B68B1DA25EB4000E4E6A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		AE33B68E1DA25EB4000E4E6A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		AE33B6901DA25EB4000E4E6A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		AE33B6951DA25EB4000E4E6A /* StellaMcYooxTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = StellaMcYooxTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		AE33B6991DA25EB4000E4E6A /* StellaMcYooxTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StellaMcYooxTests.swift; sourceTree = "<group>"; };
+		AE33B69B1DA25EB4000E4E6A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		AE33B6A01DA25EB4000E4E6A /* StellaMcYooxUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = StellaMcYooxUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		AE33B6A41DA25EB4000E4E6A /* StellaMcYooxUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StellaMcYooxUITests.swift; sourceTree = "<group>"; };
+		AE33B6A61DA25EB4000E4E6A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		AE33B67E1DA25EB4000E4E6A /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		AE33B6921DA25EB4000E4E6A /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		AE33B69D1DA25EB4000E4E6A /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		AE33B6781DA25EB4000E4E6A = {
+			isa = PBXGroup;
+			children = (
+				AE33B6831DA25EB4000E4E6A /* StellaMcYoox */,
+				AE33B6981DA25EB4000E4E6A /* StellaMcYooxTests */,
+				AE33B6A31DA25EB4000E4E6A /* StellaMcYooxUITests */,
+				AE33B6821DA25EB4000E4E6A /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		AE33B6821DA25EB4000E4E6A /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				AE33B6811DA25EB4000E4E6A /* StellaMcYoox.app */,
+				AE33B6951DA25EB4000E4E6A /* StellaMcYooxTests.xctest */,
+				AE33B6A01DA25EB4000E4E6A /* StellaMcYooxUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		AE33B6831DA25EB4000E4E6A /* StellaMcYoox */ = {
+			isa = PBXGroup;
+			children = (
+				AE33B6841DA25EB4000E4E6A /* AppDelegate.swift */,
+				AE33B6861DA25EB4000E4E6A /* ViewController.swift */,
+				AE33B6881DA25EB4000E4E6A /* Main.storyboard */,
+				AE33B68B1DA25EB4000E4E6A /* Assets.xcassets */,
+				AE33B68D1DA25EB4000E4E6A /* LaunchScreen.storyboard */,
+				AE33B6901DA25EB4000E4E6A /* Info.plist */,
+			);
+			path = StellaMcYoox;
+			sourceTree = "<group>";
+		};
+		AE33B6981DA25EB4000E4E6A /* StellaMcYooxTests */ = {
+			isa = PBXGroup;
+			children = (
+				AE33B6991DA25EB4000E4E6A /* StellaMcYooxTests.swift */,
+				AE33B69B1DA25EB4000E4E6A /* Info.plist */,
+			);
+			path = StellaMcYooxTests;
+			sourceTree = "<group>";
+		};
+		AE33B6A31DA25EB4000E4E6A /* StellaMcYooxUITests */ = {
+			isa = PBXGroup;
+			children = (
+				AE33B6A41DA25EB4000E4E6A /* StellaMcYooxUITests.swift */,
+				AE33B6A61DA25EB4000E4E6A /* Info.plist */,
+			);
+			path = StellaMcYooxUITests;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		AE33B6801DA25EB4000E4E6A /* StellaMcYoox */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = AE33B6A91DA25EB4000E4E6A /* Build configuration list for PBXNativeTarget "StellaMcYoox" */;
+			buildPhases = (
+				AE33B67D1DA25EB4000E4E6A /* Sources */,
+				AE33B67E1DA25EB4000E4E6A /* Frameworks */,
+				AE33B67F1DA25EB4000E4E6A /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = StellaMcYoox;
+			productName = StellaMcYoox;
+			productReference = AE33B6811DA25EB4000E4E6A /* StellaMcYoox.app */;
+			productType = "com.apple.product-type.application";
+		};
+		AE33B6941DA25EB4000E4E6A /* StellaMcYooxTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = AE33B6AC1DA25EB4000E4E6A /* Build configuration list for PBXNativeTarget "StellaMcYooxTests" */;
+			buildPhases = (
+				AE33B6911DA25EB4000E4E6A /* Sources */,
+				AE33B6921DA25EB4000E4E6A /* Frameworks */,
+				AE33B6931DA25EB4000E4E6A /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				AE33B6971DA25EB4000E4E6A /* PBXTargetDependency */,
+			);
+			name = StellaMcYooxTests;
+			productName = StellaMcYooxTests;
+			productReference = AE33B6951DA25EB4000E4E6A /* StellaMcYooxTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		AE33B69F1DA25EB4000E4E6A /* StellaMcYooxUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = AE33B6AF1DA25EB4000E4E6A /* Build configuration list for PBXNativeTarget "StellaMcYooxUITests" */;
+			buildPhases = (
+				AE33B69C1DA25EB4000E4E6A /* Sources */,
+				AE33B69D1DA25EB4000E4E6A /* Frameworks */,
+				AE33B69E1DA25EB4000E4E6A /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				AE33B6A21DA25EB4000E4E6A /* PBXTargetDependency */,
+			);
+			name = StellaMcYooxUITests;
+			productName = StellaMcYooxUITests;
+			productReference = AE33B6A01DA25EB4000E4E6A /* StellaMcYooxUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		AE33B6791DA25EB4000E4E6A /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0730;
+				LastUpgradeCheck = 0730;
+				ORGANIZATIONNAME = "CPM Development";
+				TargetAttributes = {
+					AE33B6801DA25EB4000E4E6A = {
+						CreatedOnToolsVersion = 7.3.1;
+					};
+					AE33B6941DA25EB4000E4E6A = {
+						CreatedOnToolsVersion = 7.3.1;
+						TestTargetID = AE33B6801DA25EB4000E4E6A;
+					};
+					AE33B69F1DA25EB4000E4E6A = {
+						CreatedOnToolsVersion = 7.3.1;
+						TestTargetID = AE33B6801DA25EB4000E4E6A;
+					};
+				};
+			};
+			buildConfigurationList = AE33B67C1DA25EB4000E4E6A /* Build configuration list for PBXProject "StellaMcYoox" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = AE33B6781DA25EB4000E4E6A;
+			productRefGroup = AE33B6821DA25EB4000E4E6A /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				AE33B6801DA25EB4000E4E6A /* StellaMcYoox */,
+				AE33B6941DA25EB4000E4E6A /* StellaMcYooxTests */,
+				AE33B69F1DA25EB4000E4E6A /* StellaMcYooxUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		AE33B67F1DA25EB4000E4E6A /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				AE33B68F1DA25EB4000E4E6A /* LaunchScreen.storyboard in Resources */,
+				AE33B68C1DA25EB4000E4E6A /* Assets.xcassets in Resources */,
+				AE33B68A1DA25EB4000E4E6A /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		AE33B6931DA25EB4000E4E6A /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		AE33B69E1DA25EB4000E4E6A /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		AE33B67D1DA25EB4000E4E6A /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				AE33B6871DA25EB4000E4E6A /* ViewController.swift in Sources */,
+				AE33B6851DA25EB4000E4E6A /* AppDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		AE33B6911DA25EB4000E4E6A /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				AE33B69A1DA25EB4000E4E6A /* StellaMcYooxTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		AE33B69C1DA25EB4000E4E6A /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				AE33B6A51DA25EB4000E4E6A /* StellaMcYooxUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		AE33B6971DA25EB4000E4E6A /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = AE33B6801DA25EB4000E4E6A /* StellaMcYoox */;
+			targetProxy = AE33B6961DA25EB4000E4E6A /* PBXContainerItemProxy */;
+		};
+		AE33B6A21DA25EB4000E4E6A /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = AE33B6801DA25EB4000E4E6A /* StellaMcYoox */;
+			targetProxy = AE33B6A11DA25EB4000E4E6A /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		AE33B6881DA25EB4000E4E6A /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				AE33B6891DA25EB4000E4E6A /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		AE33B68D1DA25EB4000E4E6A /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				AE33B68E1DA25EB4000E4E6A /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		AE33B6A71DA25EB4000E4E6A /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		AE33B6A81DA25EB4000E4E6A /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		AE33B6AA1DA25EB4000E4E6A /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = StellaMcYoox/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.faustosavatteri.StellaMcYoox;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		AE33B6AB1DA25EB4000E4E6A /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = StellaMcYoox/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.faustosavatteri.StellaMcYoox;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+		AE33B6AD1DA25EB4000E4E6A /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				INFOPLIST_FILE = StellaMcYooxTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.faustosavatteri.StellaMcYooxTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/StellaMcYoox.app/StellaMcYoox";
+			};
+			name = Debug;
+		};
+		AE33B6AE1DA25EB4000E4E6A /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				INFOPLIST_FILE = StellaMcYooxTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.faustosavatteri.StellaMcYooxTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/StellaMcYoox.app/StellaMcYoox";
+			};
+			name = Release;
+		};
+		AE33B6B01DA25EB4000E4E6A /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				INFOPLIST_FILE = StellaMcYooxUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.faustosavatteri.StellaMcYooxUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_TARGET_NAME = StellaMcYoox;
+			};
+			name = Debug;
+		};
+		AE33B6B11DA25EB4000E4E6A /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				INFOPLIST_FILE = StellaMcYooxUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.faustosavatteri.StellaMcYooxUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_TARGET_NAME = StellaMcYoox;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		AE33B67C1DA25EB4000E4E6A /* Build configuration list for PBXProject "StellaMcYoox" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				AE33B6A71DA25EB4000E4E6A /* Debug */,
+				AE33B6A81DA25EB4000E4E6A /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		AE33B6A91DA25EB4000E4E6A /* Build configuration list for PBXNativeTarget "StellaMcYoox" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				AE33B6AA1DA25EB4000E4E6A /* Debug */,
+				AE33B6AB1DA25EB4000E4E6A /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		AE33B6AC1DA25EB4000E4E6A /* Build configuration list for PBXNativeTarget "StellaMcYooxTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				AE33B6AD1DA25EB4000E4E6A /* Debug */,
+				AE33B6AE1DA25EB4000E4E6A /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		AE33B6AF1DA25EB4000E4E6A /* Build configuration list for PBXNativeTarget "StellaMcYooxUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				AE33B6B01DA25EB4000E4E6A /* Debug */,
+				AE33B6B11DA25EB4000E4E6A /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = AE33B6791DA25EB4000E4E6A /* Project object */;
+}
