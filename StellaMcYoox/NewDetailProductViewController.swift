@@ -59,7 +59,7 @@ class NewDetailProductViewController: UIViewController {
         self.navigationController?.navigationBar.tintColor = UIColor.blackColor()
         
         
-
+        self.collectionView.reloadData()
         
         
     }
@@ -96,13 +96,18 @@ class NewDetailProductViewController: UIViewController {
         
         //Immagine
         //setMainCover()
+        StellaYooxSDK.arrayOfImages = []
+        StellaYooxSDK.getMultipleImages("f", id2: "r", id3: "d", id4: "e", id5: "a", defaultCode: productId)
        
         
         collectionView.reloadData()
         print(StellaYooxSDK.arrayOfImages.count)
+        
         //Loading Complete
         SVProgressHUD.dismiss()
         
+        //reload cell
+        self.collectionView.reloadData()
         
     }
     

@@ -65,6 +65,8 @@ class DetailProductViewController: UIViewController { //BaseViewController //UIV
     
     
     override func viewWillAppear(animated: Bool) {
+        StellaYooxSDK.getMultipleImages("f", id2: "r", id3: "d", id4: "e", id5: "a", defaultCode: productId)
+
     }
     
     
@@ -88,6 +90,8 @@ class DetailProductViewController: UIViewController { //BaseViewController //UIV
         //Immagine
         setMainCover()
     
+        StellaYooxSDK.arrayOfImages = []
+        //StellaYooxSDK.getMultipleImages("f", id2: "r", id3: "d", id4: "e", id5: "a", defaultCode: productId)
         
         //Loading Complete
         SVProgressHUD.dismiss()

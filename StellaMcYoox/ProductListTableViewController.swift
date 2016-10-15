@@ -54,6 +54,8 @@ class ProductListTableViewController: UITableViewController {
         
         self.navigationItem.backBarButtonItem = UIBarButtonItem(title:"", style:.Plain, target:nil, action:nil)
         self.navigationController?.navigationBar.tintColor = UIColor.blackColor()
+        
+        self.tableView.reloadData()
 
     }
     
@@ -63,8 +65,6 @@ class ProductListTableViewController: UITableViewController {
         self.tableView.reloadData()
         SVProgressHUD.dismiss()
         
-        _ = NSTimer.scheduledTimerWithTimeInterval(2.5, target: self, selector: #selector(ProductListTableViewController.do_table_refresh), userInfo: nil, repeats: true)
-    
     }
 
     override func didReceiveMemoryWarning() {
@@ -96,13 +96,10 @@ class ProductListTableViewController: UITableViewController {
         return cell
     }
     
-    func do_table_refresh()
-    {
-        dispatch_async(dispatch_get_main_queue(), {
-            self.tableView.reloadData()
-            return
-        })
+    override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+        SVProgressHUD.show()
     }
+    
     
     /*
     // Override to support conditional editing of the table view.
@@ -141,26 +138,24 @@ class ProductListTableViewController: UITableViewController {
 
     
     // MARK: - Navigation
+    
+    override func shouldPerformSegueWithIdentifier(identifier: String, sender: AnyObject?) -> Bool {
+        
+        
+        return true
+    }
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         // Get the new view controller using segue.destinationViewController.
         // Pass the selected object to the new view controller.
         
+        
         if segue.identifier == "detailVC" {
+            print("SEGUE TO DETAIL")
             
             let destinationViewController = segue.destinationViewController as! NewDetailProductViewController
             let indexPath = self.tableView.indexPathForSelectedRow!
-            
-            //dispatch_async(dispatch_get_main_queue(), {
-
-                SVProgressHUD.show()
-                //Getting multiple images (First Beta Version - 2 Images)
-            
-                StellaYooxSDK.arrayOfImages = []
-            
-                StellaYooxSDK.getMultipleImages("f", id2: "r", id3: "d", id4: "e", id5: "a", defaultCode: StellaYooxSDK.arrayOfProducts[indexPath.row].DefaultCode10)
-            //})
             
             let destinationMicroCategory = StellaYooxSDK.arrayOfProducts[indexPath.row].MicroCategory
             destinationViewController.microCategory = destinationMicroCategory!
