@@ -1,0 +1,15 @@
+PODS:
+  - ReachabilitySwift (2.4)
+  - SVProgressHUD (2.0.3)
+
+DEPENDENCIES:
+  - ReachabilitySwift (~> 2.4)
+  - SVProgressHUD
+
+SPEC CHECKSUMS:
+  ReachabilitySwift: dc7452dab85ff881904215e1a113326ad8d07beb
+  SVProgressHUD: b0830714205bea1317ea1a2ebc71e5633af334d4
+
+PODFILE CHECKSUM: 1aaf3a8dafc94bef4e8e90379ce0f8818baf3338
+
+COCOAPODS: 1.1.0.rc.2
