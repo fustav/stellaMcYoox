@@ -96,18 +96,23 @@ class NewDetailProductViewController: UIViewController {
         
         //Immagine
         //setMainCover()
-        StellaYooxSDK.arrayOfImages = []
-        StellaYooxSDK.getMultipleImages("f", id2: "r", id3: "d", id4: "e", id5: "a", defaultCode: productId)
+        
+        
+        dispatch_async(dispatch_get_main_queue(), {
+            StellaYooxSDK.arrayOfImages = []
+
+            StellaYooxSDK.getMultipleImages("f", id2: "r", id3: "d", id4: "e", id5: "a", defaultCode: self.productId)
+            
+            self.collectionView.reloadData()
+        })
        
         
-        collectionView.reloadData()
+        //collectionView.reloadData()
         print(StellaYooxSDK.arrayOfImages.count)
         
         //Loading Complete
         SVProgressHUD.dismiss()
-        
-        //reload cell
-        self.collectionView.reloadData()
+
         
     }
     
@@ -124,13 +129,11 @@ extension NewDetailProductViewController : UICollectionViewDataSource
         return 1
     }
     func collectionView(collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        //return 4 //return array.count of product images
         return StellaYooxSDK.arrayOfImages.count
     }
     func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCellWithReuseIdentifier("imageCell", forIndexPath: indexPath) as! ProductCustomCollectionViewCell
         
-        //cell.productImage = self.productImages[indexPath.item]
         cell.productImage = StellaYooxSDK.arrayOfImages[indexPath.item]
         
         return cell

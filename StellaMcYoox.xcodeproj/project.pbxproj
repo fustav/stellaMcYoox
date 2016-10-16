@@ -25,6 +25,8 @@
 		AE33B6CA1DA29ADA000E4E6A /* ProductImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE33B6C91DA29ADA000E4E6A /* ProductImage.swift */; };
 		AE33B6CC1DA29F72000E4E6A /* NewDetailProductViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE33B6CB1DA29F72000E4E6A /* NewDetailProductViewController.swift */; };
 		AE33B6D11DA2A2C4000E4E6A /* ProductCustomCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE33B6D01DA2A2C4000E4E6A /* ProductCustomCollectionViewCell.swift */; };
+		B76880DA1DB3A3D8004229B8 /* ProductListCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B76880D91DB3A3D8004229B8 /* ProductListCollectionViewController.swift */; };
+		B76880DC1DB3B856004229B8 /* ProductListCustomCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B76880DB1DB3B856004229B8 /* ProductListCustomCollectionViewCell.swift */; };
 		C0EE8F8AFCE472B9AE1F8DDF /* Pods_StellaMcYoox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3877638F3C56598BCF7105EF /* Pods_StellaMcYoox.framework */; };
 		F1C6A3C91AA4CF8E880A3587 /* Pods_StellaMcYooxTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 19F1B65C70B17013EAB2B8AC /* Pods_StellaMcYooxTests.framework */; };
 /* End PBXBuildFile section */
@@ -74,6 +76,8 @@
 		AE33B6C91DA29ADA000E4E6A /* ProductImage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProductImage.swift; sourceTree = "<group>"; };
 		AE33B6CB1DA29F72000E4E6A /* NewDetailProductViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewDetailProductViewController.swift; sourceTree = "<group>"; };
 		AE33B6D01DA2A2C4000E4E6A /* ProductCustomCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProductCustomCollectionViewCell.swift; sourceTree = "<group>"; };
+		B76880D91DB3A3D8004229B8 /* ProductListCollectionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProductListCollectionViewController.swift; sourceTree = "<group>"; };
+		B76880DB1DB3B856004229B8 /* ProductListCustomCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProductListCustomCollectionViewCell.swift; sourceTree = "<group>"; };
 		C1975EFA0BF2B68340E3282E /* Pods-StellaMcYooxUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-StellaMcYooxUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-StellaMcYooxUITests/Pods-StellaMcYooxUITests.release.xcconfig"; sourceTree = "<group>"; };
 		D87E73AE7518078F0D6F5D0F /* Pods-StellaMcYoox.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-StellaMcYoox.debug.xcconfig"; path = "Pods/Target Support Files/Pods-StellaMcYoox/Pods-StellaMcYoox.debug.xcconfig"; sourceTree = "<group>"; };
 		E1AD55CB4A2363DD8F00C33F /* Pods-StellaMcYooxTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-StellaMcYooxTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-StellaMcYooxTests/Pods-StellaMcYooxTests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -146,7 +150,8 @@
 			children = (
 				AE33B6BD1DA25ED8000E4E6A /* StellaYooxSDK.swift */,
 				AE33B6C61DA264EB000E4E6A /* Categories */,
-				AE33B6C71DA26507000E4E6A /* ProductList */,
+				B76880D81DB3A377004229B8 /* Product List Collection View */,
+				AE33B6C71DA26507000E4E6A /* ProductList TableView */,
 				AE33B6CD1DA2A105000E4E6A /* Detail Product */,
 				AE33B6C21DA25F53000E4E6A /* Assets.xcassets */,
 				AE33B6841DA25EB4000E4E6A /* AppDelegate.swift */,
@@ -185,14 +190,14 @@
 			name = Categories;
 			sourceTree = "<group>";
 		};
-		AE33B6C71DA26507000E4E6A /* ProductList */ = {
+		AE33B6C71DA26507000E4E6A /* ProductList TableView */ = {
 			isa = PBXGroup;
 			children = (
 				AE33B6BA1DA25ED8000E4E6A /* Product.swift */,
 				AE33B6BB1DA25ED8000E4E6A /* ProductCustomTableViewCell.swift */,
 				AE33B6BC1DA25ED8000E4E6A /* ProductListTableViewController.swift */,
 			);
-			name = ProductList;
+			name = "ProductList TableView";
 			sourceTree = "<group>";
 		};
 		AE33B6C81DA29AAF000E4E6A /* ProductImage */ = {
@@ -212,6 +217,15 @@
 				AE33B6C81DA29AAF000E4E6A /* ProductImage */,
 			);
 			name = "Detail Product";
+			sourceTree = "<group>";
+		};
+		B76880D81DB3A377004229B8 /* Product List Collection View */ = {
+			isa = PBXGroup;
+			children = (
+				B76880D91DB3A3D8004229B8 /* ProductListCollectionViewController.swift */,
+				B76880DB1DB3B856004229B8 /* ProductListCustomCollectionViewCell.swift */,
+			);
+			name = "Product List Collection View";
 			sourceTree = "<group>";
 		};
 		E6B56A07DCD3444E31427DA8 /* Pods */ = {
@@ -510,9 +524,11 @@
 				AE33B6B71DA25ED1000E4E6A /* Category.swift in Sources */,
 				AE33B6D11DA2A2C4000E4E6A /* ProductCustomCollectionViewCell.swift in Sources */,
 				AE33B6C11DA25ED8000E4E6A /* StellaYooxSDK.swift in Sources */,
+				B76880DC1DB3B856004229B8 /* ProductListCustomCollectionViewCell.swift in Sources */,
 				AE33B6BF1DA25ED8000E4E6A /* ProductCustomTableViewCell.swift in Sources */,
 				AE33B6CC1DA29F72000E4E6A /* NewDetailProductViewController.swift in Sources */,
 				AE33B6C01DA25ED8000E4E6A /* ProductListTableViewController.swift in Sources */,
+				B76880DA1DB3A3D8004229B8 /* ProductListCollectionViewController.swift in Sources */,
 				AE33B6B81DA25ED1000E4E6A /* DetailProductViewController.swift in Sources */,
 				AE33B6CA1DA29ADA000E4E6A /* ProductImage.swift in Sources */,
 				AE33B6B91DA25ED1000E4E6A /* HomeViewController.swift in Sources */,

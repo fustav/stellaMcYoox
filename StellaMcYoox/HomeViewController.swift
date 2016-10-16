@@ -92,7 +92,8 @@ extension HomeViewController : UICollectionViewDataSource
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject!) {
         if segue.identifier == "productListCategory" {
-            let destinationViewController = segue.destinationViewController as! ProductListTableViewController
+            let destinationViewController = segue.destinationViewController as! ProductListCollectionViewController
+            //let destinationViewController = segue.destinationViewController as! ProductListTableViewController
             let indexPath = self.collectionView?.indexPathsForSelectedItems()!.first
             
             if ((self.reachability?.isReachable()) != false) {

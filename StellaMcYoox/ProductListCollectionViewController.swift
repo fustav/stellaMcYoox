@@ -1,22 +1,23 @@
 //
-//  ProductListTableViewController.swift
-//  StellaYooxTest
+//  ProductListCollectionViewController.swift
+//  StellaMcYoox
 //
-//  Created by CPM Development on 28/09/16.
+//  Created by Maria Piscopo on 16/10/16.
 //  Copyright © 2016 CPM Development. All rights reserved.
 //
 
+import Foundation
 import UIKit
 import SVProgressHUD
 import ReachabilitySwift
 
-class ProductListTableViewController: UITableViewController {
+class ProductListCollectionViewController: UICollectionViewController {
     
     var category = ""
     var item : Product = Product()
-
-
-
+    
+    
+    
     func setImage() {
         if self.category == "Main_Accessories_All" {
             //Logo su Navigation Top Bar
@@ -37,13 +38,13 @@ class ProductListTableViewController: UITableViewController {
             self.navigationItem.titleView = imageView
         }
         else {
-                //Logo su Navigation Top Bar
-                let logo = UIImage(named: "lingerieNavigation.pdf")
-                let imageView = UIImageView(image:logo)
-                self.navigationItem.titleView = imageView
+            //Logo su Navigation Top Bar
+            let logo = UIImage(named: "lingerieNavigation.pdf")
+            let imageView = UIImageView(image:logo)
+            self.navigationItem.titleView = imageView
         }
     }
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -55,94 +56,58 @@ class ProductListTableViewController: UITableViewController {
         self.navigationItem.backBarButtonItem = UIBarButtonItem(title:"", style:.Plain, target:nil, action:nil)
         self.navigationController?.navigationBar.tintColor = UIColor.blackColor()
         
-        self.tableView.reloadData()
-
+        self.collectionView!.reloadData()
+        
     }
     
     override func viewDidAppear(animated: Bool) {
         super.viewDidAppear(animated)
         
-        self.tableView.reloadData()
+        self.collectionView!.reloadData()
         SVProgressHUD.dismiss()
         
     }
-
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-
+    
     // MARK: - Table view data source
-
-    override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
-        // #warning Incomplete implementation, return the number of sections
+    
+    
+    override func numberOfSectionsInCollectionView(collectionView: UICollectionView) -> Int {
         return 1
     }
-
-    override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        // #warning Incomplete implementation, return the number of rows
+    override func collectionView(collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return StellaYooxSDK.arrayOfProducts.count
     }
+    override func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
+        let cell = collectionView.dequeueReusableCellWithReuseIdentifier("productCell", forIndexPath: indexPath) as! ProductListCustomCollectionViewCell
 
-    override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCellWithIdentifier("productCell", forIndexPath: indexPath) as! ProductCustomTableViewCell
-
+        
         // Configure the cell...
-        self.item = StellaYooxSDK.arrayOfProducts[indexPath.row]
+        self.item = StellaYooxSDK.arrayOfProducts[indexPath.item]
         
         // DOWNLOAD Product IMAGE
         
-        let imgURLString = "http://ypic.yoox.biz/ypic/stellamccartney/-resize/260/f/\(StellaYooxSDK.arrayOfProducts[indexPath.row].DefaultCode10).jpg"
+        let imgURLString = "http://ypic.yoox.biz/ypic/stellamccartney/-resize/260/f/\(StellaYooxSDK.arrayOfProducts[indexPath.item].DefaultCode10).jpg"
         
         let cache = ImageLoadingWithCache()
-        cache.getImage(imgURLString, imageView: cell.productImage, defaultImage: "\(StellaYooxSDK.arrayOfProducts[indexPath.row].DefaultCode10)")
+        cache.getImage(imgURLString, imageView: cell.productImage, defaultImage: "\(StellaYooxSDK.arrayOfProducts[indexPath.item].DefaultCode10)")
         
         //cell.setCell(item.MicroCategory!, price: "EUR \(String(item.FullPrice!)),00", productImage: item.productImage!)
         cell.setTitleLabelandPrice(item.MicroCategory!, price: "EUR \(String(item.FullPrice!)),00")
         
         return cell
     }
+  
     
-    override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+    override func collectionView(collectionView: UICollectionView, didSelectItemAtIndexPath indexPath: NSIndexPath) {
         SVProgressHUD.show()
     }
     
     
-    /*
-    // Override to support conditional editing of the table view.
-    override func tableView(tableView: UITableView, canEditRowAtIndexPath indexPath: NSIndexPath) -> Bool {
-        // Return false if you do not want the specified item to be editable.
-        return true
-    }
-    */
-
-    /*
-    // Override to support editing the table view.
-    override func tableView(tableView: UITableView, commitEditingStyle editingStyle: UITableViewCellEditingStyle, forRowAtIndexPath indexPath: NSIndexPath) {
-        if editingStyle == .Delete {
-            // Delete the row from the data source
-            tableView.deleteRowsAtIndexPaths([indexPath], withRowAnimation: .Fade)
-        } else if editingStyle == .Insert {
-            // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
-        }    
-    }
-    */
-
-    /*
-    // Override to support rearranging the table view.
-    override func tableView(tableView: UITableView, moveRowAtIndexPath fromIndexPath: NSIndexPath, toIndexPath: NSIndexPath) {
-
-    }
-    */
-
-    /*
-    // Override to support conditional rearranging of the table view.
-    override func tableView(tableView: UITableView, canMoveRowAtIndexPath indexPath: NSIndexPath) -> Bool {
-        // Return false if you do not want the item to be re-orderable.
-        return true
-    }
-    */
-
     
     // MARK: - Navigation
     
@@ -151,7 +116,7 @@ class ProductListTableViewController: UITableViewController {
         
         return true
     }
-
+    
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         // Get the new view controller using segue.destinationViewController.
@@ -162,36 +127,33 @@ class ProductListTableViewController: UITableViewController {
             print("SEGUE TO DETAIL")
             
             let destinationViewController = segue.destinationViewController as! NewDetailProductViewController
-            let indexPath = self.tableView.indexPathForSelectedRow!
+
+            let indexPath: NSIndexPath = (self.collectionView?.indexPathsForSelectedItems()!.first)!
+
             
-            let destinationMicroCategory = StellaYooxSDK.arrayOfProducts[indexPath.row].MicroCategory
+            let destinationMicroCategory = StellaYooxSDK.arrayOfProducts[indexPath.item].MicroCategory
             destinationViewController.microCategory = destinationMicroCategory!
             
-            let destinationTitle = StellaYooxSDK.arrayOfProducts[indexPath.row].BrandName
+            let destinationTitle = StellaYooxSDK.arrayOfProducts[indexPath.item].BrandName
             destinationViewController.productTitle = destinationTitle!
-
             
-            let destinationPrice = String(StellaYooxSDK.arrayOfProducts[indexPath.row].FullPrice)
+            
+            let destinationPrice = String(StellaYooxSDK.arrayOfProducts[indexPath.item].FullPrice)
             destinationViewController.price = destinationPrice
             
-            let destinationModelName = StellaYooxSDK.arrayOfProducts[indexPath.row].ModelNames
+            let destinationModelName = StellaYooxSDK.arrayOfProducts[indexPath.item].ModelNames
             destinationViewController.modelName = destinationModelName!
             
-           /* if (StellaYooxSDK.arrayOfProducts[indexPath.row].productImage != nil) {
-                let destinationProductId = StellaYooxSDK.arrayOfProducts[indexPath.row].DefaultCode10
-                destinationViewController.productId = destinationProductId!
-            }*/
-            
-            let destinationProductId = StellaYooxSDK.arrayOfProducts[indexPath.row].DefaultCode10
+            let destinationProductId = StellaYooxSDK.arrayOfProducts[indexPath.item].DefaultCode10
             destinationViewController.productId = destinationProductId!
-
-
+            
+            
         }
-
+        
     }
     
     override func viewWillAppear(animated: Bool) {
-
+        
         super.viewWillAppear(animated)
         
         //declare this property where it won't go out of scope relative to your listener

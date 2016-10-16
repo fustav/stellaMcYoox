@@ -104,9 +104,7 @@
                                                     <connections>
                                                         <outlet property="categoryTitleLabel" destination="wh1-kx-nOM" id="Rl5-eH-8MM"/>
                                                         <outlet property="featuredImageView" destination="2ZY-o1-3zk" id="ACF-Gf-7nK"/>
-                                                        <segue destination="Lma-Y7-nEP" kind="show" identifier="productListCategory" id="AmH-10-SUw">
-                                                            <nil key="action"/>
-                                                        </segue>
+                                                        <segue destination="E20-MM-Q0g" kind="show" identifier="productListCategory" id="FCO-9a-i7m"/>
                                                     </connections>
                                                 </collectionViewCell>
                                             </cells>
@@ -147,36 +145,112 @@
             </objects>
             <point key="canvasLocation" x="1783" y="-339"/>
         </scene>
+        <!--Product List Collection View Controller-->
+        <scene sceneID="Lny-JA-Rri">
+            <objects>
+                <collectionViewController id="E20-MM-Q0g" customClass="ProductListCollectionViewController" customModule="StellaMcYoox" customModuleProvider="target" sceneMemberID="viewController">
+                    <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" id="3XS-5g-nKM">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                        <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="5" minimumInteritemSpacing="5" id="KZr-te-A3B">
+                            <size key="itemSize" width="140" height="180"/>
+                            <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                            <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                            <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                        </collectionViewFlowLayout>
+                        <cells>
+                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="productCell" id="7zs-u9-o59" customClass="ProductListCustomCollectionViewCell" customModule="StellaMcYoox" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="64" width="150" height="300"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                                    <rect key="frame" x="0.0" y="0.0" width="150" height="300"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Product Title" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BsP-gV-ZY6">
+                                            <rect key="frame" x="8" y="255" width="142" height="25"/>
+                                            <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="17"/>
+                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Price" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GUF-DW-jjN">
+                                            <rect key="frame" x="8" y="279" width="134" height="21"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="21" id="EVe-g9-EMu"/>
+                                            </constraints>
+                                            <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="13"/>
+                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="stella" translatesAutoresizingMaskIntoConstraints="NO" id="69g-8a-mE3">
+                                            <rect key="frame" x="0.0" y="0.0" width="156" height="250"/>
+                                        </imageView>
+                                    </subviews>
+                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                </view>
+                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstItem="BsP-gV-ZY6" firstAttribute="leading" secondItem="7zs-u9-o59" secondAttribute="leadingMargin" id="7eh-l3-NCC"/>
+                                    <constraint firstItem="GUF-DW-jjN" firstAttribute="top" secondItem="69g-8a-mE3" secondAttribute="bottom" constant="29" id="86v-vG-syZ"/>
+                                    <constraint firstAttribute="bottom" secondItem="GUF-DW-jjN" secondAttribute="bottom" id="LaJ-oa-m5E"/>
+                                    <constraint firstAttribute="bottomMargin" secondItem="BsP-gV-ZY6" secondAttribute="bottom" constant="12" id="MIj-6L-O6c"/>
+                                    <constraint firstItem="69g-8a-mE3" firstAttribute="leading" secondItem="7zs-u9-o59" secondAttribute="leading" id="SFE-57-bIS"/>
+                                    <constraint firstItem="BsP-gV-ZY6" firstAttribute="top" secondItem="69g-8a-mE3" secondAttribute="bottom" constant="5" id="Vyw-RP-5MG"/>
+                                    <constraint firstItem="GUF-DW-jjN" firstAttribute="trailing" secondItem="7zs-u9-o59" secondAttribute="trailingMargin" id="aDV-cv-bxU"/>
+                                    <constraint firstItem="BsP-gV-ZY6" firstAttribute="leading" secondItem="GUF-DW-jjN" secondAttribute="leading" id="gPS-eD-3Tf"/>
+                                    <constraint firstItem="69g-8a-mE3" firstAttribute="top" secondItem="7zs-u9-o59" secondAttribute="top" id="l47-LU-0Tx"/>
+                                    <constraint firstAttribute="trailingMargin" secondItem="69g-8a-mE3" secondAttribute="trailing" constant="-14" id="yKf-EP-R74"/>
+                                    <constraint firstAttribute="trailing" secondItem="BsP-gV-ZY6" secondAttribute="trailing" id="zF4-sA-z2R"/>
+                                </constraints>
+                                <size key="customSize" width="150" height="300"/>
+                                <connections>
+                                    <outlet property="price" destination="GUF-DW-jjN" id="VOJ-gi-fyX"/>
+                                    <outlet property="productImage" destination="69g-8a-mE3" id="6XE-NF-ZCJ"/>
+                                    <outlet property="title" destination="BsP-gV-ZY6" id="1Ft-PQ-usu"/>
+                                    <segue destination="P0u-b1-6p1" kind="show" identifier="detailVC" id="H2J-3K-T1C"/>
+                                </connections>
+                            </collectionViewCell>
+                        </cells>
+                        <connections>
+                            <outlet property="dataSource" destination="E20-MM-Q0g" id="74m-Bt-KuY"/>
+                            <outlet property="delegate" destination="E20-MM-Q0g" id="JlN-jf-URS"/>
+                        </connections>
+                    </collectionView>
+                </collectionViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="89r-xt-3gP" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2586" y="-339"/>
+        </scene>
         <!--Product List Table View Controller-->
         <scene sceneID="MAL-J4-UpK">
             <objects>
                 <tableViewController id="Lma-Y7-nEP" customClass="ProductListTableViewController" customModule="StellaMcYoox" customModuleProvider="target" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="68" sectionHeaderHeight="28" sectionFooterHeight="28" id="n52-kg-iIe">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="99" sectionHeaderHeight="28" sectionFooterHeight="28" id="n52-kg-iIe">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="productCell" rowHeight="68" id="k8j-jN-htG" customClass="ProductCustomTableViewCell" customModule="StellaMcYoox" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="92" width="600" height="68"/>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="productCell" rowHeight="99" id="k8j-jN-htG" customClass="ProductCustomTableViewCell" customModule="StellaMcYoox" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="28" width="600" height="99"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="k8j-jN-htG" id="ONZ-y9-lTA">
-                                    <rect key="frame" x="0.0" y="0.0" width="600" height="67.5"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="600" height="98.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Product Title wetrjtyerjoòtektwrk" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="geN-Z4-cE7">
-                                            <rect key="frame" x="87" y="-5" width="237" height="48"/>
+                                            <rect key="frame" x="109" y="-5" width="237" height="48"/>
                                             <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="17"/>
                                             <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Price" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BSD-LI-a47">
-                                            <rect key="frame" x="87" y="38" width="427" height="21"/>
+                                            <rect key="frame" x="109" y="39" width="427" height="21"/>
                                             <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="12"/>
                                             <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                             <nil key="highlightedColor"/>
                                         </label>
-                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="stella" translatesAutoresizingMaskIntoConstraints="NO" id="kIf-wu-7bh">
-                                            <rect key="frame" x="11" y="0.0" width="68" height="68"/>
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="stella" translatesAutoresizingMaskIntoConstraints="NO" id="kIf-wu-7bh">
+                                            <rect key="frame" x="11" y="0.0" width="90" height="90.5"/>
                                         </imageView>
                                     </subviews>
                                 </tableViewCellContentView>
@@ -184,7 +258,6 @@
                                     <outlet property="price" destination="BSD-LI-a47" id="IE5-Wq-Vxa"/>
                                     <outlet property="productImage" destination="kIf-wu-7bh" id="Ttz-4Y-lbE"/>
                                     <outlet property="title" destination="geN-Z4-cE7" id="4c2-mL-JyW"/>
-                                    <segue destination="P0u-b1-6p1" kind="show" identifier="detailVC" id="Pcy-ON-bv4"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -196,7 +269,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="do8-cx-0ma" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2566" y="-339"/>
+            <point key="canvasLocation" x="3432" y="37"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="hUv-uM-1gL">
@@ -308,7 +381,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="0R7-U4-l0q" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3390" y="-356"/>
+            <point key="canvasLocation" x="3432" y="-632"/>
         </scene>
         <!--New Detail Product View Controller-->
         <scene sceneID="iUx-iJ-hA8">
@@ -430,7 +503,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Qlf-Qt-5Fi" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2638" y="399"/>
+            <point key="canvasLocation" x="2586" y="491"/>
         </scene>
     </scenes>
     <resources>

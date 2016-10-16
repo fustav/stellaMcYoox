@@ -28,7 +28,7 @@ class StellaYooxSDK {
     
     static var productImage: Image = Image()
     static var arrayOfImages: [Image] = []
-    
+    static var imageView: UIImageView = UIImageView()
     
     static func getJSON(department: String) {
         
@@ -85,10 +85,14 @@ class StellaYooxSDK {
                                             print(arrayOfProducts.count)
                                             
                                             
-                                            dispatch_async(dispatch_get_main_queue(), {
+                                           /* dispatch_async(dispatch_get_main_queue(), {
                                               
                                             // DOWNLOAD Product IMAGE
-                                            let imgURLString = "http://ypic.yoox.biz/ypic/stellamccartney/-resize/260/f/\(selectedProduct.DefaultCode10).jpg"
+                                                
+                                                 let imgURLString = "http://ypic.yoox.biz/ypic/stellamccartney/-resize/260/f/\(selectedProduct.DefaultCode10).jpg"
+                                           
+                                                
+                                                
                                             //print("TEST: stampo l'urlString dell'immagine: \(imgURLString)")
                                              
                                              let imgURL = NSURL(string: imgURLString)
@@ -102,7 +106,7 @@ class StellaYooxSDK {
                                              print("Impossibile salvare l'immagine perchè non esiste")
                                              }
 
-                                            })
+                                            })*/
                                             
                                             StellaYooxSDK.arrayOfProducts.append(selectedProduct)
 
@@ -138,22 +142,7 @@ class StellaYooxSDK {
         }
         return false
     }
-    
-    /*static func setImage(productId: String)  -> UIImage?{
-        if (productId != "") {
-            
-            let imgURLString = "http://ypic.yoox.biz/ypic/stellamccartney/-resize/750/f/\(productId).jpg"
-            //print("url foto è:\(url)")
-            print("percorso completo: \(imgURLString)")
-            
-            let imgURL = NSURL(string: imgURLString)
-            let imageData = NSData(contentsOfURL: imgURL!)
-            let image = UIImage(data: imageData!)
-            StellaYooxSDK.productImage.featuredImageView = image
-            StellaYooxSDK.arrayOfImages.append(StellaYooxSDK.productImage)
-        }
-        return nil
-    }*/
+
     
     static func getMultipleImages(id1: String, id2: String, id3: String, id4: String, id5: String, defaultCode: String) {
         let imgURLString = "http://ypic.yoox.biz/ypic/stellamccartney/-resize/750/\(id1)/\(defaultCode).jpg"
@@ -165,6 +154,7 @@ class StellaYooxSDK {
         let image = UIImage(data: imageData!)
         StellaYooxSDK.productImage.featuredImageView = image
         StellaYooxSDK.arrayOfImages.append(StellaYooxSDK.productImage)
+        
         
         let img2URLString = "http://ypic.yoox.biz/ypic/stellamccartney/-resize/750/\(id2)/\(defaultCode).jpg"
         print("percorso completo foto2: \(img2URLString)")
@@ -199,11 +189,14 @@ class StellaYooxSDK {
                         else { print("no more images")}
                 }
                 else { print("no more images")}
+                
+        
             }
             
             // Get the 4th Image (if exist)
             do {
                 let img4URLString = "http://ypic.yoox.biz/ypic/stellamccartney/-resize/750/\(id4)/\(defaultCode).jpg"
+               
                 let img4URL = NSURL(string: img4URLString)
                 let image4Data = NSData(contentsOfURL: img4URL!)
                 if image4Data != nil { //se non è nil
@@ -223,7 +216,7 @@ class StellaYooxSDK {
 
             }
             
-            // Get the 4th Image (if exist)
+            // Get the 5th Image (if exist)
             do {
                 let img5URLString = "http://ypic.yoox.biz/ypic/stellamccartney/-resize/750/\(id5)/\(defaultCode).jpg"
                 let img5URL = NSURL(string: img5URLString)
@@ -242,6 +235,7 @@ class StellaYooxSDK {
                     else { print("no more images")}
                 }
                 else { print("no more images")}
+                
 
             }
 
@@ -289,4 +283,31 @@ extension UIViewController {
 }
 
 
-
+class ImageLoadingWithCache {
+    
+    var imageCache = [String:UIImage]()
+    
+    func getImage(url: String, imageView: UIImageView, defaultImage: String) {
+        if let img = imageCache[url] {
+            imageView.image = img
+        } else {
+            let request: NSURLRequest = NSURLRequest(URL: NSURL(string: url)!)
+            let mainQueue = NSOperationQueue.mainQueue()
+            
+            NSURLConnection.sendAsynchronousRequest(request, queue: mainQueue, completionHandler: { (response, data, error) -> Void in
+                if error == nil {
+                    let image = UIImage(data: data!)
+                    self.imageCache[url] = image
+                    //print("TEST: Ho scaricato l'immagine")
+                    
+                    dispatch_async(dispatch_get_main_queue(), {
+                        imageView.image = image
+                    })
+                }
+                else {
+                    imageView.image = UIImage(named: defaultImage)
+                }
+            })
+        }
+    }
+}
